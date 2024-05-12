@@ -1,0 +1,19 @@
+# Temporary data and backup files
+*~
+*.swp
+*.bak
+*.pyc
+
+# Python virtual environments
+venv/
+env/
+ENV/
+
+# Ignore IDE and editor configuration files
+.idea/
+.vscode/
+
+# Ignore build files and temporary files
+__pycache__/
+.DS_Store
+node_modules/
