@@ -17,3 +17,11 @@ ENV/
 __pycache__/
 .DS_Store
 node_modules/
+
+.vs/
+*.sqlite
+*.user
+*.suo
+.vscode/
+.vs/
+*.vsidx
