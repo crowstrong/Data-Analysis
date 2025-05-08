@@ -4,7 +4,7 @@
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
-    gender TEXT CHECK (gender IN ('male', 'female', 'other'))
+    gender TEXT CHECK (gender IN ('male', 'female','Чоловік','Жінка', 'other'))
 );
 
 -- Surveys
@@ -32,7 +32,7 @@ CREATE TABLE skills (
     name TEXT NOT NULL
 );
 
-CREATE TABLE learning_goals (
+CREATE TABLE goals (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
 );
@@ -90,13 +90,9 @@ CREATE TABLE student_jobs (
 );
 
 -- === 4. Education details (separate if multiple degrees are needed) ===
-CREATE TABLE student_education (
+CREATE TABLE education (
     id SERIAL PRIMARY KEY,
     student_id INTEGER,
-    survey_id INTEGER,
-    institution TEXT,
-    degree_level_id INTEGER REFERENCES degree_levels(id),
     field TEXT,
-    year_completed INTEGER,
     FOREIGN KEY (student_id, survey_id) REFERENCES meta_data(student_id, survey_id) ON DELETE CASCADE
 );
