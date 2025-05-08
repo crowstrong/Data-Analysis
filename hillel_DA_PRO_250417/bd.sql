@@ -32,7 +32,7 @@ CREATE TABLE skills (
     name TEXT NOT NULL
 );
 
-CREATE TABLE goals (
+CREATE TABLE learning_goals (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL
 );
@@ -90,9 +90,11 @@ CREATE TABLE student_jobs (
 );
 
 -- === 4. Education details (separate if multiple degrees are needed) ===
-CREATE TABLE education (
+CREATE TABLE student_education (
     id SERIAL PRIMARY KEY,
     student_id INTEGER,
+    survey_id INTEGER,
+    degree_level_id INTEGER REFERENCES degree_levels(id),
     field TEXT,
     FOREIGN KEY (student_id, survey_id) REFERENCES meta_data(student_id, survey_id) ON DELETE CASCADE
 );
